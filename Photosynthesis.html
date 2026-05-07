@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photosynthesis - Nature's Process</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkGreen: '#0a1a16',
+                        leafGreen: '#2d6a4f',
+                        lightLeaf: '#52b788',
+                        cream: '#f8f9fa'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
 
+    <!-- Hero Section - Your Template Design -->
+    <header class="relative h-[90vh] flex flex-col justify-center items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" 
+                 alt="Green Leaves Background" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+
+        <div class="relative z-10 text-center text-white px-6">
+            <p class="font-sans text-lg md:text-xl mb-3 tracking-wider opacity-90">Turning Light into Life</p>
+            <h1 class="font-serif text-5xl md:text-8xl font-bold mb-4 text-shadow">PHOTOSYNTHESIS</h1>
+            <p class="font-sans text-lg md:text-xl opacity-95">Nature's Way of Creating Life</p>
+        </div>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="py-16 px-6 max-w-6xl mx-auto">
+        <h2 class="font-serif text-3xl md:text-4xl text-center text-leafGreen mb-8">What is Photosynthesis?</h2>
+        <p class="text-lg text-center leading-relaxed mb-6">
+            Photosynthesis is the process where plants use sunlight, water, and carbon dioxide to create glucose for food and release oxygen into the air. It is the foundation of life on Earth, converting light energy into chemical energy that feeds almost all living organisms.
+        </p>
+        <div class="bg-cream p-6 rounded-xl shadow-md border-l-4 border-leafGreen max-w-2xl mx-auto">
+            <p class="text-center font-medium text-gray-700">
+                <strong>Simple Equation:</strong><br>
+                Carbon Dioxide + Water + Sunlight → Glucose + Oxygen
+            </p>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-16 px-6 bg-darkGreen/5">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-serif text-3xl md:text-4xl text-center text-leafGreen mb-12">How Does It Work?</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <div class="w-14 h-14 bg-leafGreen/10 text-leafGreen rounded-full flex items-center justify-center text-2xl mb-4">
+                        <i class="fa fa-sun-o"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Capturing Energy</h3>
+                    <p>Chlorophyll in plant leaves absorbs energy from sunlight, acting like nature’s solar panel.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <div class="w-14 h-14 bg-leafGreen/10 text-leafGreen rounded-full flex items-center justify-center text-2xl mb-4">
+                        <i class="fa fa-tint"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Collecting Materials</h3>
+                    <p>Roots absorb water from the soil, while leaves take in carbon dioxide from the air through tiny pores called stomata.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <div class="w-14 h-14 bg-leafGreen/10 text-leafGreen rounded-full flex items-center justify-center text-2xl mb-4">
+                        <i class="fa fa-leaf"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Creating Food</h3>
+                    <p>Using sunlight energy, plants transform water and carbon dioxide into glucose (food) and release oxygen as a by-product.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Importance Section -->
+    <section class="py-16 px-6 max-w-6xl mx-auto">
+        <h2 class="font-serif text-3xl md:text-4xl text-center text-leafGreen mb-8">Why Is It Important?</h2>
+        <div class="space-y-4 text-lg leading-relaxed">
+            <p>• Produces oxygen that humans and animals need to survive.</p>
+            <p>• Creates the primary source of energy for almost all food chains on Earth.</p>
+            <p>• Removes carbon dioxide from the atmosphere, helping regulate the Earth’s temperature.</p>
+            <p>• Provides raw materials for many products we use daily, including food, wood, and medicines.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkGreen text-white py-8 px-6 text-center">
+        <p class="mb-2">© 2026 Photosynthesis Education | Science Learning Resource</p>
+        <p class="text-sm opacity-75">Nature’s process that sustains life on our planet</p>
+    </footer>
+
+</body>
+</html>
