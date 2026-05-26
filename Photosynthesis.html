@@ -1,124 +1,572 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photosynthesis - Nature's Process</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photosynthesis - Nature's Energy Factory</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         darkGreen: '#0a1a16',
-                        leafGreen: '#2d6a4f',
+                        leafGreen: '#2E7D32',
                         lightLeaf: '#52b788',
-                        cream: '#f8f9fa'
+                        cream: '#f8f9fa',
+                        accentBlue: '#1976D2'
                     },
                     fontFamily: {
                         serif: ['Playfair Display', 'serif'],
                         sans: ['Inter', 'sans-serif']
-                    },
+                    }
                 }
             }
         }
     </script>
+
     <style type="text/tailwindcss">
         @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
             .text-shadow {
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
             }
+
+            .glass {
+                background: rgba(255,255,255,0.1);
+                backdrop-filter: blur(10px);
+            }
+
+            .card-hover {
+                @apply transition duration-300 hover:-translate-y-2 hover:shadow-2xl;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
 
-    <!-- Hero Section - Your Template Design -->
-    <header class="relative h-[90vh] flex flex-col justify-center items-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" 
-                 alt="Green Leaves Background" 
-                 class="w-full h-full object-cover">
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 w-full bg-darkGreen text-white shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <h1 class="font-serif text-2xl font-bold">
+                Photosynthesis
+            </h1>
+
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#home" class="hover:text-lightLeaf transition">Home</a>
+                <a href="#about" class="hover:text-lightLeaf transition">What is it?</a>
+                <a href="#process" class="hover:text-lightLeaf transition">How it Works</a>
+                <a href="#importance" class="hover:text-lightLeaf transition">Importance</a>
+                <a href="#activities" class="hover:text-lightLeaf transition">Activities</a>
+                <a href="#quiz" class="hover:text-lightLeaf transition">Quiz</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+
+        <div class="absolute inset-0">
+            <img
+                src="https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                alt="Green Forest"
+                class="w-full h-full object-cover"
+            />
+
             <div class="absolute inset-0 bg-black/60"></div>
         </div>
 
-        <div class="relative z-10 text-center text-white px-6">
-            <p class="font-sans text-lg md:text-xl mb-3 tracking-wider opacity-90">Turning Light into Life</p>
-            <h1 class="font-serif text-5xl md:text-8xl font-bold mb-4 text-shadow">PHOTOSYNTHESIS</h1>
-            <p class="font-sans text-lg md:text-xl opacity-95">Nature's Way of Creating Life</p>
-            <p class="font-sans text-lg md:text-xl mb-3 tracking-wider opacity-90">By: AMADORE, PRINCESS PAULEEN</p>
+        <div class="relative z-10 text-center text-white px-6 mt-20">
+
+            <p class="tracking-widest uppercase text-lg mb-4 opacity-90">
+                Turning Light into Life
+            </p>
+
+            <h1 class="font-serif text-5xl md:text-8xl font-bold mb-6 text-shadow">
+                PHOTOSYNTHESIS
+            </h1>
+
+            <p class="text-xl md:text-2xl mb-4">
+                Nature's Energy Factory
+            </p>
+
+            <p class="text-lg opacity-90">
+                By: AMADORE, PRINCESS PAULEEN
+            </p>
+
+            <a href="#about"
+               class="inline-block mt-8 bg-leafGreen hover:bg-green-700 transition px-8 py-3 rounded-full text-white font-semibold shadow-lg">
+                Start Learning
+            </a>
+
         </div>
     </header>
 
-    <!-- Introduction Section -->
-    <section class="py-16 px-6 max-w-6xl mx-auto">
-        <h2 class="font-serif text-3xl md:text-4xl text-center text-leafGreen mb-8">What is Photosynthesis?</h2>
-        <p class="text-lg text-center leading-relaxed mb-6">
-            Photosynthesis is the process where plants use sunlight, water, and carbon dioxide to create glucose for food and release oxygen into the air. It is the foundation of life on Earth, converting light energy into chemical energy that feeds almost all living organisms.
-        </p>
-        <div class="bg-cream p-6 rounded-xl shadow-md border-l-4 border-leafGreen max-w-2xl mx-auto">
-            <p class="text-center font-medium text-gray-700">
-                <strong>Simple Equation:</strong><br>
-                Carbon Dioxide + Water + Sunlight → Glucose + Oxygen
-            </p>
+    <!-- LEARNING OBJECTIVES -->
+    <section class="py-20 px-6 max-w-6xl mx-auto">
+
+        <h2 class="font-serif text-4xl text-center text-leafGreen mb-12">
+            Learning Objectives
+        </h2>
+
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+
+            <ul class="space-y-5 text-lg">
+
+                <li>✅ Define photosynthesis and state its chemical equation</li>
+
+                <li>✅ Identify the raw materials, conditions, and products</li>
+
+                <li>✅ Explain the step-by-step process of photosynthesis</li>
+
+                <li>✅ Describe why photosynthesis sustains life on Earth</li>
+
+                <li>✅ Relate photosynthesis to climate, food, and oxygen supply</li>
+
+            </ul>
+
         </div>
+
     </section>
 
-    <!-- How It Works Section -->
-    <section class="py-16 px-6 bg-darkGreen/5">
+    <!-- ABOUT -->
+    <section id="about" class="py-20 bg-darkGreen/5 px-6">
+
         <div class="max-w-6xl mx-auto">
-            <h2 class="font-serif text-3xl md:text-4xl text-center text-leafGreen mb-12">How Does It Work?</h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                    <div class="w-14 h-14 bg-leafGreen/10 text-leafGreen rounded-full flex items-center justify-center text-2xl mb-4">
+
+            <h2 class="font-serif text-4xl text-center text-leafGreen mb-10">
+                What is Photosynthesis?
+            </h2>
+
+            <div class="bg-white rounded-2xl shadow-lg p-10">
+
+                <p class="text-lg leading-relaxed mb-6">
+                    Photosynthesis is the process by which green plants,
+                    algae, and some bacteria convert light energy from the Sun
+                    into chemical energy stored in glucose (sugar).
+                </p>
+
+                <p class="text-lg leading-relaxed mb-6">
+                    It uses carbon dioxide from the air and water from the soil,
+                    and releases oxygen into the atmosphere.
+                </p>
+
+                <p class="text-lg leading-relaxed">
+                    It is the foundation of life because almost every living
+                    thing depends on it for food or oxygen.
+                </p>
+
+            </div>
+
+            <!-- EQUATION -->
+            <div class="mt-10 bg-white rounded-2xl shadow-lg p-8 text-center">
+
+                <h3 class="text-3xl font-bold text-leafGreen mb-6">
+                    Chemical Equation
+                </h3>
+
+                <p class="text-xl mb-4">
+                    Carbon Dioxide + Water + Sunlight →
+                    Glucose + Oxygen
+                </p>
+
+                <div class="bg-green-50 p-6 rounded-xl">
+
+                    <p class="text-2xl font-bold text-darkGreen">
+                        6CO₂ + 6H₂O + Light Energy →
+                        C₆H₁₂O₆ + 6O₂
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="process" class="py-20 px-6">
+
+        <div class="max-w-7xl mx-auto">
+
+            <h2 class="font-serif text-4xl text-center text-leafGreen mb-14">
+                How Does It Work?
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- STEP 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+
+                    <div class="w-16 h-16 rounded-full bg-yellow-100 text-yellow-500 flex items-center justify-center text-3xl mb-5">
                         <i class="fa fa-sun-o"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Capturing Energy</h3>
-                    <p>Chlorophyll in plant leaves absorbs energy from sunlight, acting like nature’s solar panel.</p>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Step 1: Capturing Energy
+                    </h3>
+
+                    <p class="leading-relaxed">
+                        Chlorophyll absorbs sunlight and traps energy inside
+                        the chloroplasts of leaf cells.
+                    </p>
+
+                    <p class="mt-4 text-sm text-gray-500">
+                        🌿 Plants appear green because they reflect green light.
+                    </p>
+
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                    <div class="w-14 h-14 bg-leafGreen/10 text-leafGreen rounded-full flex items-center justify-center text-2xl mb-4">
+                <!-- STEP 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+
+                    <div class="w-16 h-16 rounded-full bg-blue-100 text-blue-500 flex items-center justify-center text-3xl mb-5">
                         <i class="fa fa-tint"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Collecting Materials</h3>
-                    <p>Roots absorb water from the soil, while leaves take in carbon dioxide from the air through tiny pores called stomata.</p>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Step 2: Collecting Materials
+                    </h3>
+
+                    <p class="leading-relaxed">
+                        Roots absorb water from the soil while leaves take in
+                        carbon dioxide through stomata.
+                    </p>
+
+                    <p class="mt-4 text-sm text-gray-500">
+                        💧 Water is essential for plant survival.
+                    </p>
+
                 </div>
 
-                <!-- Card 3 -->
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                    <div class="w-14 h-14 bg-leafGreen/10 text-leafGreen rounded-full flex items-center justify-center text-2xl mb-4">
+                <!-- STEP 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+
+                    <div class="w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-3xl mb-5">
+                        <i class="fa fa-bolt"></i>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Step 3: Transforming Energy
+                    </h3>
+
+                    <p class="leading-relaxed">
+                        Light energy splits water molecules and combines them
+                        with carbon dioxide to create glucose.
+                    </p>
+
+                </div>
+
+                <!-- STEP 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+
+                    <div class="w-16 h-16 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-3xl mb-5">
                         <i class="fa fa-leaf"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Creating Food</h3>
-                    <p>Using sunlight energy, plants transform water and carbon dioxide into glucose (food) and release oxygen as a by-product.</p>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Step 4: Making Food
+                    </h3>
+
+                    <p class="leading-relaxed">
+                        Plants use glucose for growth and release oxygen
+                        into the atmosphere.
+                    </p>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- Importance Section -->
-    <section class="py-16 px-6 max-w-6xl mx-auto">
-        <h2 class="font-serif text-3xl md:text-4xl text-center text-leafGreen mb-8">Why Is It Important?</h2>
-        <div class="space-y-4 text-lg leading-relaxed">
-            <p>• Produces oxygen that humans and animals need to survive.</p>
-            <p>• Creates the primary source of energy for almost all food chains on Earth.</p>
-            <p>• Removes carbon dioxide from the atmosphere, helping regulate the Earth’s temperature.</p>
-            <p>• Provides raw materials for many products we use daily, including food, wood, and medicines.</p>
+    <!-- IMPORTANCE -->
+    <section id="importance" class="py-20 bg-darkGreen text-white px-6">
+
+        <div class="max-w-7xl mx-auto">
+
+            <h2 class="font-serif text-4xl text-center mb-14">
+                Why is Photosynthesis Important?
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <div class="glass p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-4">
+                        🌱 Oxygen Production
+                    </h3>
+
+                    <p class="leading-relaxed">
+                        Photosynthesis produces most of the oxygen we breathe.
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-4">
+                        🥗 Food Source
+                    </h3>
+
+                    <p class="leading-relaxed">
+                        Plants are the beginning of every food chain on Earth.
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-4">
+                        🌍 Climate Balance
+                    </h3>
+
+                    <p class="leading-relaxed">
+                        Plants absorb carbon dioxide and help regulate climate.
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-4">
+                        🌳 Raw Materials
+                    </h3>
+
+                    <p class="leading-relaxed">
+                        Provides wood, food, medicines, paper, and fuel.
+                    </p>
+                </div>
+
+            </div>
+
         </div>
+
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-darkGreen text-white py-8 px-6 text-center">
-        <p class="mb-2">© 2026 Photosynthesis Education | Science Learning Resource | Teacher Amadore</p>
-        <p class="text-sm opacity-75">Nature’s process that sustains life on our planet</p>
+    <!-- REAL LIFE APPLICATION -->
+    <section class="py-20 px-6 bg-green-50">
+
+        <div class="max-w-6xl mx-auto">
+
+            <h2 class="font-serif text-4xl text-center text-leafGreen mb-12">
+                Real-Life Applications
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">
+                        🚜 Farmers
+                    </h3>
+
+                    <p>
+                        Farmers depend on sunlight, water, and healthy plants
+                        to grow crops for food.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">
+                        🌳 Forests
+                    </h3>
+
+                    <p>
+                        Forests act as the “lungs of the Earth” by producing oxygen.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">
+                        🌍 Global Warming
+                    </h3>
+
+                    <p>
+                        More plants help absorb carbon dioxide and reduce warming.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ACTIVITIES -->
+    <section id="activities" class="py-20 px-6">
+
+        <div class="max-w-7xl mx-auto">
+
+            <h2 class="font-serif text-4xl text-center text-leafGreen mb-14">
+                Interactive Activities
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <!-- ACTIVITY 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        🔎 Activity 1 – Label the Diagram
+                    </h3>
+
+                    <p class="leading-relaxed">
+                        Identify chloroplast, chlorophyll, stomata,
+                        roots, water, oxygen, and sunlight.
+                    </p>
+
+                </div>
+
+                <!-- ACTIVITY 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        🌱 Activity 2 – Think & Connect
+                    </h3>
+
+                    <p class="leading-relaxed">
+                        If there were no plants, what would happen
+                        to oxygen, food, and climate?
+                    </p>
+
+                </div>
+
+                <!-- ACTIVITY 3 -->
+                <!-- ACTIVITY 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        📽️ Activity 3 – Watch & Learn
+                    </h3>
+
+                    <iframe
+                        class="w-full rounded-xl"
+                        height="250"
+                        src="https://www.youtube.com/embed/CMiPYHNNg28"
+                        title="Photosynthesis Video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+                <!-- ACTIVITY 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        🧪 Activity 4 – Home Experiment
+                    </h3>
+
+                    <p class="leading-relaxed">
+                        Grow one plant in sunlight and another in darkness.
+                        Observe and compare the differences.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="py-20 bg-darkGreen/5 px-6">
+
+        <div class="max-w-4xl mx-auto">
+
+            <h2 class="font-serif text-4xl text-center text-leafGreen mb-12">
+                Quiz: Check Your Understanding
+            </h2>
+
+            <div class="bg-white p-10 rounded-2xl shadow-xl space-y-8">
+
+                <div>
+                    <p class="font-semibold text-lg">
+                        1. What are the raw materials for photosynthesis?
+                    </p>
+                </div>
+
+                <div>
+                    <p class="font-semibold text-lg">
+                        2. Which pigment captures sunlight?
+                    </p>
+                </div>
+
+                <div>
+                    <p class="font-semibold text-lg">
+                        3. What gas is released during photosynthesis?
+                    </p>
+                </div>
+
+                <div>
+                    <p class="font-semibold text-lg">
+                        4. Explain one way photosynthesis helps the environment.
+                    </p>
+                </div>
+
+                <div>
+                    <p class="font-semibold text-lg">
+                        5. Write the word equation for photosynthesis.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- REFERENCES -->
+    <section class="py-16 px-6">
+
+        <div class="max-w-5xl mx-auto">
+
+            <h2 class="font-serif text-4xl text-center text-leafGreen mb-10">
+                References
+            </h2>
+
+            <div class="bg-white rounded-2xl shadow-lg p-8 space-y-4">
+
+                <p>
+                    Campbell, N. A., & Reece, J. B. (2020).
+                    <em>Biology: Concepts & Connections.</em>
+                    Pearson Education.
+                </p>
+
+                <p>
+                    Photosynthesis Education. (2026).
+                    Science Learning Resource.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkGreen text-white py-10 text-center px-6">
+
+        <p class="mb-3 text-lg">
+            © 2026 Photosynthesis Education | Science Learning Resource
+        </p>
+
+        <p class="opacity-80">
+            Nature’s process that sustains life on Earth
+        </p>
+
     </footer>
 
 </body>
